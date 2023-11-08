@@ -1,0 +1,72 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap");
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: max-content;
+  font-size: 20px;
+  margin: 5% 0;
+}
+.tasklist .task {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  margin: 2% 20%;
+}
+.tasklist .task .table {
+  margin-bottom: 1ch;
+  width: 100%;
+  border: 1px solid black;
+  height: 3ch;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tasklist .task .title::before {
+  content: attr(data-before) "⠀";
+  font-weight: 900;
+  user-select: text;
+}
+.tasklist .task .content {
+  text-align: justify;
+}
+.tasklist .task .content input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+  width: calc(var(--data-count, 3) * 10px + 10px);
+  text-align: center;
+}
+
+@media screen and (width <= 1000px) {
+  .tasklist .task {
+    margin: 3% 10%;
+  }
+}
+@media screen and (width <= 750px) {
+  .tasklist .task {
+    margin: 5%;
+  }
+}
+@media screen and (width < 650px) {
+  .tasklist .task {
+    margin: 20px;
+    margin-bottom: 40px;
+  }
+  .tasklist .task .table {
+    padding: 1rem 0;
+    height: max-content;
+    gap: 5px;
+  }
+  .tasklist .task .content {
+    margin-top: 20px;
+  }
+}/*# sourceMappingURL=main.css.map */
